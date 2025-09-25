@@ -7,7 +7,7 @@ terraform {
   }
   required_version = "~> 1.8"
 }
- 
+
 provider "akamai" {
   edgerc         = "~/.edgerc"
   config_section = "terraform"
