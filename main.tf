@@ -26,3 +26,8 @@ data "akamai_property" "my_property" {
 output "my_property" {
   value = data.akamai_property.my_property.id
 }
+
+locals {
+  service_name = "notes"
+  owner        = "Community Team"
+}
