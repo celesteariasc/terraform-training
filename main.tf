@@ -28,6 +28,5 @@ output "my_property" {
 }
 
 locals {
-  service_name = "notes"
-  owner        = "Community Team"
-}
+  notes = join(" - ", ["TF-3001", data.akamai_group.my_group_id])
+} 
