@@ -27,6 +27,6 @@ output "my_property" {
   value = data.akamai_property.my_property.id
 }
 
-locals {
-  notes = join(" - ", ["TF-3001", data.akamai_group.my_group_id])
-} 
+#locals {
+#  notes = join(" - ", ["TF-3001", data.akamai_group.my_group_id])
+#} 

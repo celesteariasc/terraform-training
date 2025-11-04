@@ -9,3 +9,9 @@ variable "config_section" {
   description = "config_section"
   #default     = "terraform"
 }
+
+variable "ab_test" {
+  type        = string
+  description = "ab_test"
+  default     = "A"
+}
