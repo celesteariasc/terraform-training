@@ -82,10 +82,13 @@ resource "akamai_property" "my_property" {
   rule_format   = "v2025-04-29"
   version_notes = "Terraform config"
   rules         = data.akamai_property_rules_builder.my_default_rule.json
-  hostnames {
-    cname_from             = "cearia-scriptclub.akamaiterraform.com"
+  dynamic "hostnames" {
+    for_each = local.app_hostnames
+    content {
+    cname_from             = hostnames.value
     cname_to               = akamai_edge_hostname.my_edge_hostname.edge_hostname
     cert_provisioning_type = "DEFAULT"
+    }
   }
 }
 
