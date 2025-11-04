@@ -27,6 +27,13 @@ output "my_property" {
   value = data.akamai_property.my_property.id
 }
 
-#locals {
-#  notes = join(" - ", ["TF-3001", data.akamai_group.my_group_id])
-#} 
+locals {
+  notes = join(" - ", ["TF-3001", data.akamai_group.my_group_id.id])
+
+  app_hostnames = concat(["cearia-scriptclub.akamaiterraform.com"],
+  [for app in var.apps : "${app}.cearia-terraform.com"]) 
+} 
+
+output "app_hostnames" {
+  value = local.app_hostnames
+}

@@ -15,3 +15,8 @@ variable "ab_test" {
   description = "ab_test"
   default     = "A"
 }
+
+variable "apps" {
+  type = list(string)
+  description = "Iterations"
+}
